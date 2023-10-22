@@ -1,0 +1,8 @@
+.Userbox {
+  background: rgb(211, 67, 173);
+  background: linear-gradient(
+    7deg,
+    rgba(211, 67, 173, 0.3) 0%,
+    rgba(5, 9, 28, 0.9) 20%
+  );
+}
