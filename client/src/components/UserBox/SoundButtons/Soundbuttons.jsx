@@ -1,5 +1,5 @@
 import MusicButton from "./MusicButton";
-import Soundbutton from "./Soundbutton";
+import Soundbutton from "./SoundButton";
 import BackgroundMusic from "../../../assets/Sound/InterstellerLofi.mp3";
 export default function Soundbuttons() {
   return (
