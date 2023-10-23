@@ -13,7 +13,7 @@ export default function Message({ message }) {
       </div>
       <div className="text-sm flex flex-col justify-between w-full">
         <h2 className="text-gray-500 px-2">{message.username}</h2>
-        <h1 className="px-2 h-10 flex items-center  bg-BorderColor/30 w-full rounded-lg">
+        <h1 className="px-1 h-11 flex items-center  bg-BorderColor/30 w-full rounded-lg overflow-scroll">
           {message.text}
         </h1>
       </div>
