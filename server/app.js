@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // Configure CORS to allow access only from "https://spaceboard.netlify.app/"
-const originURL = "https://spaceboard.netlify.app/";
+const originURL = "https://spaceboard.netlify.app";
 app.use(cors({ origin: originURL }));
 app.use((req, res, next) => {
   const origin = req.headers.origin;
