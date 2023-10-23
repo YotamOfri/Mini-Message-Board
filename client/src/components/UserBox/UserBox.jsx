@@ -23,7 +23,6 @@ export default function UserBox() {
   useEffect(() => {
     if (isSuccess) setIsSuccess(false);
   }, [isSuccess]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username.length === 0 || text.length === 0) {
@@ -41,10 +40,12 @@ export default function UserBox() {
         picture: picture,
         _id: Date + username,
       };
-      setMessageList([...messageList, Message]);
+      if (!isError) setMessageList([...messageList, Message]);
     }
   };
-
+  useEffect(() => {
+    if (isError) setMessageList(messageList.slice(1));
+  }, [isError]);
   return (
     <form className="Userbox sm:px-5 p-2 w-[90%] min-h-[200px] max-w-[1500px] border-[1.5px] border-BorderColor rounded-2xl flex gap-5 items-center">
       <div className="h-full">

@@ -8,9 +8,8 @@ export default function Chat() {
   const { data, status } = useQuery(["Messages Lamp"], () => GetTenMessages());
   const { messageList, setMessageList } = useContext(Context);
   useEffect(() => {
-    if (status === "success" && messageList.length === 0) {
+    if (status === "success" && messageList.length === 0 && data.length > 0)
       setMessageList(data);
-    }
   }, [status]);
   return (
     <div className="h-[600px] w-[90%]  overflow-scroll max-w-[1500px] bg-ContastColor bg-opacity-40 border-[1.5px] border-BorderColor rounded-2xl flex flex-col items-center  gap-2 p-2 ">
@@ -19,6 +18,8 @@ export default function Chat() {
           <Message key={(message._id, index)} message={message} />
         ))}
       {status === "loading" && <Loading></Loading>}
+      {status === "error" ||
+        (data?.length === 0 && <h1>Something Went Wrong</h1>)}
     </div>
   );
 }

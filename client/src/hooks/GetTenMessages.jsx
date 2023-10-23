@@ -4,6 +4,6 @@ export default async function GetTenMessages() {
     const response = await axios.get(`http://localhost:3000/messages/`);
     return response.data;
   } catch (error) {
-    console.error("Error in Fetching Messages:", error);
+    return [];
   }
 }
